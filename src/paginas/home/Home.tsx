@@ -1,6 +1,7 @@
 import './Home.css'
 import carroLogo from '../../assets/carroLogo.jpg'
 
+
 function Home() {
     return (
         <>
