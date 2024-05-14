@@ -70,7 +70,7 @@ function DeletarProduto() {
       <p className='text-center font-semibold mb-4'>Você tem certeza de que deseja apagar produto a seguir?</p>
 
       <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-        <header className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>Produto</header>
+        <header className='py-2 px-6 bg-emerald-600 text-white font-bold text-2xl'>Produto</header>
         <div className="p-4">
           <p className='text-xl h-full'>{Produto.nome}</p>
           <img src={Produto.foto} />

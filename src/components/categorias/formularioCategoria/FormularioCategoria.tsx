@@ -128,7 +128,7 @@ function FormularioCategoria() {
             />
           </div>
           <button
-            className="rounded text-slate-100 bg-black hover:bg-gray-700 w-1/2 py-2 mx-auto block"
+            className="rounded text-slate-100 bg-emerald-900 hover:bg-emerald-700 w-1/2 py-2 mx-auto block"
             type="submit"
           >
             {id === undefined ? 'Cadastrar' : 'Editar'}
