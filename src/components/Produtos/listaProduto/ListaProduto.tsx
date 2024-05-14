@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useState } from 'react';
 import { Dna } from 'react-loader-spinner';
-import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Produto from '../../../models/Produto';
 import { buscar } from '../../../services/Service';
@@ -10,27 +11,27 @@ import { toastAlerta } from '../../../util/toastAlert';
 function ListaProdutos() {
   const [produtos, setProdutos] = useState<Produto[]>([]);
 
-  let navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
 
   const { usuario, handleLogout } = useContext(AuthContext);
 
 
   async function buscarProdutos() {
     try {
-      await buscar('/produto', setProdutos, {
-
-      });
+        await buscar('/produto', setProdutos, {});
+        setLoading(false);
     } catch (error: any) {
-      if (error.toString().includes('403')) {
-        toastAlerta('O token expirou, favor logar novamente', "info")
-        handleLogout()
-      }
+        if (error.toString().includes('403')) {
+            toastAlerta('O token expirou, favor logar novamente', "info")
+            handleLogout()
+        }
     }
-  }
+}
 
   useEffect(() => {
     buscarProdutos();
   }, [produtos.length]);
+  
   return (
     <>
       {produtos.length === 0 && (
