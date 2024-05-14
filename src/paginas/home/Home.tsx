@@ -1,6 +1,7 @@
 import './Home.css'
 import carroLogo from '../../assets/carroLogo.jpg'
-
+import ListaProdutos from '../../components/Produtos/listaProduto/ListaProduto';
+import ModalProduto from '../../components/Produtos/modalProduto/ModalProduto';
 
 function Home() {
     return (
@@ -12,7 +13,7 @@ function Home() {
               <p className='text-xl'>Onde você vai andar com responsabilidade</p>
   
               <div className="flex justify-around gap-4">
-              
+              <ModalProduto />
                 <button className='rounded bg-white text-black py-2 px-4'>Veja nossos catálogos</button>
               </div>
             </div>
@@ -23,7 +24,7 @@ function Home() {
             </div>
           </div>
         </div>
-      
+      <ListaProdutos/>
       </>
     );
 }
