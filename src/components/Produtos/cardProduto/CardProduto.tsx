@@ -17,11 +17,11 @@ function CardProduto({prod}: CardPostagemProps) {
 
         <div className='p-4 '>
           <img src={prod.foto} />
-          <p>{prod.cor}</p>
-          <p>{prod.modelo}</p>
-          <p>{prod.ano}</p>
-          <p>{prod.preco}</p>
-          <p>Categoria: {prod.categoria?.nome}</p>
+          <p>{`COR: ${prod.cor}`}</p>
+          <p>{`MODELO: ${prod.modelo}`}</p>
+          <p>{`ANO: ${prod.ano}`}</p>
+          <p>{`PREÇO: ${prod.preco}`}</p>
+          <p>CATEGORIA: {prod.categoria?.nome}</p>
         </div>
         
       </div>

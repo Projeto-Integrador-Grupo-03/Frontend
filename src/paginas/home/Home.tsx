@@ -24,6 +24,7 @@ function Home() {
             </div>
           </div>
         </div>
+        <p className='text-3xl font-semibold text-center '>VEJA NOSSOS PRODUTOS EM DESTAQUE:</p>
       <ListaProdutos/>
       </>
     );
