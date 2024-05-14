@@ -21,7 +21,7 @@ function CardProduto({prod}: CardPostagemProps) {
           <p>{prod.modelo}</p>
           <p>{prod.ano}</p>
           <p>{prod.preco}</p>
-          <p>Categoria: {prod.categoria?.descricao}</p>
+          <p>Categoria: {prod.categoria?.nome}</p>
         </div>
         
       </div>
