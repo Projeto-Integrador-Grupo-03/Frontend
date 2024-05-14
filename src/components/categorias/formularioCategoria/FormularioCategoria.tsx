@@ -8,7 +8,7 @@ import { toastAlerta } from "../../../util/toastAlert";
 function FormularioCategoria() {
     const [categoria, setCategoria] = useState<Categoria>({} as Categoria);
   
-    let navigate = useNavigate();
+    const navigate = useNavigate();
   
     const { id } = useParams<{ id: string }>();
   
