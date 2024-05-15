@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/exhaustive-deps */
-import './Home.css'
 import carroLogo from '../../assets/logo01.jpg'
 import ModalProduto from '../../components/Produtos/modalProduto/ModalProduto';
 import CardProduto from '../../components/Produtos/cardProduto/CardProduto';
