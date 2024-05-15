@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 import Produto from '../../../models/Produto'
 import { AuthContext } from '../../../contexts/AuthContext';
 import { useContext } from 'react';
+import { RotatingLines } from 'react-loader-spinner';
 
 interface CardPostagemProps {
   prod: Produto
@@ -9,7 +10,7 @@ interface CardPostagemProps {
 
 function CardProduto({ prod }: CardPostagemProps) {
 
-  const {usuario, adicionarProduto, removerProduto } = useContext(AuthContext)
+  const {usuario, adicionarProduto, removerProduto, isLoading } = useContext(AuthContext)
 
   let botoesAdmin;
 
@@ -25,6 +26,7 @@ function CardProduto({ prod }: CardPostagemProps) {
       </div>
      )
    }
+
 
   return (
     <div className='border rounded-lg overflow-hidden shadow-md'>
@@ -58,7 +60,15 @@ function CardProduto({ prod }: CardPostagemProps) {
         ) : (
           <div className="flex justify-center">
             <button className="bg-emerald-900 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded-full w-80 "
-            onClick={() => adicionarProduto(prod)}>Comprar</button>
+            onClick={() => adicionarProduto(prod)}>
+              {isLoading ? <RotatingLines
+              strokeColor="white"
+              strokeWidth="5"
+              animationDuration="0.75"
+              width="24"
+              visible={true}
+            /> :
+              <span>Comprar</span>}</button>
           </div>
           
         )}

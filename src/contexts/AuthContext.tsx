@@ -5,6 +5,7 @@ import { login } from "../services/Service"
 import { toastAlerta } from "../util/toastAlert"
 import Produto from "../models/Produto"
 
+
 interface AuthContextProps {
     usuario: UsuarioLogin
     handleLogout(): void
@@ -30,11 +31,13 @@ export function AuthProvider({ children }: AuthProviderProps) {
     const quantidadeItems = items.length
 
     function adicionarProduto(produto: Produto) {
+        toastAlerta("Produto adicionado com sucesso", 'sucesso')
         setItems(state => [...state, produto])
     }
 
     // Remove a quantidade de um produto especifico
     function removerProduto(produtoId: number) {
+        toastAlerta("Produto removido com Sucesso", 'sucesso')
 
         // O findIndex() verifica se o ID do produto informado consta no Array, e pega a posição/indice desse item no Array
         const indice = items.findIndex(items => items.id === produtoId) 
@@ -48,7 +51,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
 
     function limparCart() {
-        alert("Compra Efetuada com Sucesso")
+        toastAlerta("Compra Efetuada com Sucesso", 'sucesso')
         setItems([])
     }
 

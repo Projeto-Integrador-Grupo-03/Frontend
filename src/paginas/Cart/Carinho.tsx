@@ -6,6 +6,7 @@ import { AuthContext } from '../../contexts/AuthContext'
 function Carrinho() {
 
     const { items, limparCart } = useContext(AuthContext)
+    console.log(items)
 
     return (
         <>
