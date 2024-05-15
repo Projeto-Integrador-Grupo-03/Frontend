@@ -21,8 +21,24 @@ function CardProduto({ prod }: CardPostagemProps) {
    if (usuario.token !== "" && usuario.login == "admin@admin.com") {
      botoesAdmin = (
              <div className="p-4 flex justify-between">        
-      <Link to={`/editarProduto/${prod.id}`} className='text-white bg-emerald-700 hover:bg-emerald-900 font-bold py-2 px-4 rounded-full w-24 flex justify-center'>Editar</Link>
-      <Link to={`/deletarProduto/${prod.id}`} className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full w-24 flex justify-center'>Deletar</Link>
+      <Link to={`/editarProduto/${prod.id}`} className='text-white bg-emerald-700 hover:bg-emerald-900 font-bold py-2 px-4 rounded-full w-24 flex justify-center'>              
+              {isLoading ? <RotatingLines
+              strokeColor="white"
+              strokeWidth="5"
+              animationDuration="0.75"
+              width="24"
+              visible={true}
+            /> :
+              <span>Editar</span>}</Link>
+      <Link to={`/deletarProduto/${prod.id}`} className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full w-24 flex justify-center'>              
+              {isLoading ? <RotatingLines
+              strokeColor="white"
+              strokeWidth="5"
+              animationDuration="0.75"
+              width="24"
+              visible={true}
+            /> :
+              <span>Deletar</span>}</Link>
       </div>
      )
    }
