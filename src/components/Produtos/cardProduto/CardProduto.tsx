@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import Produto from '../../../models/Produto'
 import { AuthContext } from '../../../contexts/AuthContext';
 import { useContext } from 'react';
@@ -9,7 +9,22 @@ interface CardPostagemProps {
 
 function CardProduto({ prod }: CardPostagemProps) {
 
-  const { adicionarProduto, removerProduto } = useContext(AuthContext)
+  const {usuario, adicionarProduto, removerProduto } = useContext(AuthContext)
+
+  let botoesAdmin;
+
+  const location = useLocation();
+
+  const isCarrinho = location.pathname === '/carrinho';
+
+   if (usuario.token !== "" && usuario.login == "admin@admin.com") {
+     botoesAdmin = (
+             <div className="p-4 flex justify-between">        
+      <Link to={`/editarProduto/${prod.id}`} className='text-white bg-emerald-700 hover:bg-emerald-900 font-bold py-2 px-4 rounded-full w-24 flex justify-center'>Editar</Link>
+      <Link to={`/deletarProduto/${prod.id}`} className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full w-24 flex justify-center'>Deletar</Link>
+      </div>
+     )
+   }
 
   return (
     <div className='border rounded-lg overflow-hidden shadow-md'>
@@ -29,19 +44,29 @@ function CardProduto({ prod }: CardPostagemProps) {
         </div>
       </div>
 
-      <div className="p-4 flex justify-between">
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-                    onClick={() => adicionarProduto(prod)}>Adicionar</button>
 
-                <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full"
-                    onClick={() => removerProduto(prod.id)}>Remover</button>
-                <Link to={`/editarProduto/${prod.id}`} className='text-white bg-emerald-700 hover:bg-emerald-900 rounded-md py-2 px-4'>
-                  Editar
-                </Link>
-                <Link to={`/deletarProduto/${prod.id}`} className='text-white bg-red-400 hover:bg-red-700 rounded-md py-2 px-4'>
-                  Deletar
-                </Link>
+<div className="p-4">
+        {/* Mostra os botões com base na condição */}
+        {isCarrinho ? (
+          <div className='flex justify-between'>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-52"
+              onClick={() => adicionarProduto(prod)}>Adicionar</button>
+
+            <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full w-52"
+              onClick={() => removerProduto(prod.id)}>Remover</button>
+          </div>
+        ) : (
+          <div className="flex justify-center">
+            <button className="bg-emerald-900 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded-full w-80 "
+            onClick={() => adicionarProduto(prod)}>Comprar</button>
+          </div>
+          
+        )}
+
       </div>
+
+      {botoesAdmin}
+
     </div>
   );
 }

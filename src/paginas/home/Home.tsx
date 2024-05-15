@@ -8,8 +8,11 @@ import Produto from '../../models/Produto';
 import { toastAlerta } from '../../util/toastAlert';
 import { buscar } from '../../services/Service';
 import { AuthContext } from '../../contexts/AuthContext';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Home() {
+
+  const navigate = useNavigate()
 
   const [produtos, setProdutos] = useState<Produto[]>([]);
 
@@ -43,8 +46,8 @@ function Home() {
               <p className='text-xl'>Onde você vai andar com responsabilidade</p>
   
               <div className="flex justify-around gap-4">
-              <ModalProduto />
-                <button className='border rounded py-2 px-4 hover:bg-white hover:text-black'>Veja nossos catálogos</button>
+                <ModalProduto />
+              <Link to='/produtos' className='hover:underline'><button className='border rounded py-2 px-4 hover:bg-white hover:text-black'>Veja nossos catálogos</button></Link>
               </div>
             </div>
   
@@ -61,6 +64,7 @@ function Home() {
           <CardProduto key={produto.id} prod={produto} />
         ))}
       </div>
+      
       </>
     );
 }
