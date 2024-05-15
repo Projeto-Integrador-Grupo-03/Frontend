@@ -4,6 +4,7 @@ import UsuarioLogin from "../models/UsuarioLogin"
 import { login } from "../services/Service"
 import { toastAlerta } from "../util/toastAlert"
 import Produto from "../models/Produto"
+import { useNavigate } from "react-router-dom"
 
 
 interface AuthContextProps {
@@ -31,8 +32,13 @@ export function AuthProvider({ children }: AuthProviderProps) {
     const quantidadeItems = items.length
 
     function adicionarProduto(produto: Produto) {
-        toastAlerta("Produto adicionado com sucesso", 'sucesso')
-        setItems(state => [...state, produto])
+        if(usuario.token !== ""){
+            toastAlerta("Produto adicionado com sucesso", 'sucesso')
+            setItems(state => [...state, produto]) 
+        }else{
+            toastAlerta("Necessario fazer o login!", 'erro')
+        }
+        
     }
 
     // Remove a quantidade de um produto especifico

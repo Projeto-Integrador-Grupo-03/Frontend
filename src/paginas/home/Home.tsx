@@ -9,6 +9,7 @@ import { toastAlerta } from '../../util/toastAlert';
 import { buscar } from '../../services/Service';
 import { AuthContext } from '../../contexts/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
+import Carrossel from '../../components/carrossel/Carrossel';
 
 function Home() {
 
@@ -52,7 +53,8 @@ function Home() {
             </div>
   
             <div className="flex justify-center ">
-              <img src={carroLogo} alt="" className='w-2/3' />
+              {/* <img src={carroLogo} alt="" className='w-2/3' /> */}
+              <Carrossel />
       
             </div>
           </div>

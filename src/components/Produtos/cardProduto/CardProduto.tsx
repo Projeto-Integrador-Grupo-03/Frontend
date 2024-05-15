@@ -65,7 +65,7 @@ function CardProduto({ prod }: CardPostagemProps) {
 
 <div className="p-4">
         {/* Mostra os botões com base na condição */}
-        {isCarrinho ? (
+        {isCarrinho && usuario.token !== ""? (
           <div className='flex justify-between'>
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-52"
               onClick={() => adicionarProduto(prod)}>Adicionar</button>
@@ -74,6 +74,7 @@ function CardProduto({ prod }: CardPostagemProps) {
               onClick={() => removerProduto(prod.id)}>Remover</button>
           </div>
         ) : (
+          
           <div className="flex justify-center">
             <button className="bg-emerald-900 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded-full w-80 "
             onClick={() => adicionarProduto(prod)}>
