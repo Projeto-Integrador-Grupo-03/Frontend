@@ -8,7 +8,7 @@ function Navbar() {
   
   const navigate = useNavigate()
 
-  const { usuario, handleLogout } = useContext(AuthContext)
+  const { usuario, quantidadeItems , handleLogout } = useContext(AuthContext)
 
   function logout() {
     handleLogout()
@@ -31,6 +31,7 @@ function Navbar() {
               <Link to='/sobre' className='hover:underline'>Sobre nós</Link>
               <Link to='/perfil' className='hover:underline'>Perfil</Link>
               <Link to='' onClick={logout} className='hover:underline'>Sair</Link>
+              <Link to='/carrinho' className='font-bold'>Carrinho [{ quantidadeItems }]</Link>
             </div>
           </div>
         </div>
