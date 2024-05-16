@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { AuthContext } from '../../../contexts/AuthContext'
@@ -8,7 +10,7 @@ import { toastAlerta } from '../../../util/toastAlert'
 function DeletarProduto() {
   const [Produto, setProdutos] = useState<Produto>({} as Produto)
 
-  let navigate = useNavigate()
+  const navigate = useNavigate()
 
   const { id } = useParams<{ id: string }>()
 

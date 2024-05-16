@@ -18,7 +18,7 @@ import logo04 from "../../assets/logo04.jpg"
 
 function Carrossel() {
 
-    var items = [
+    const items = [
         { img: logo01 },
         { img: logo02 },
         { img: logo04 }

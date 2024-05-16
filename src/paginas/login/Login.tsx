@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
 import './Login.css';
 
@@ -40,9 +41,9 @@ function login(e: ChangeEvent<HTMLFormElement>) {
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold ">
         <form className="flex justify-center items-center flex-col w-1/2 gap-4" onSubmit={login}>
-          <h2 className="text-slate-900 text-5xl ">Entrar</h2>
+          <h2 className="text-white text-5xl ">Entrar</h2>
           <div className="flex flex-col w-full">
-            <label htmlFor="login">Login</label>
+            <label htmlFor="login" className='text-white'>Login</label>
             <input
               type="text"
               id="login"
@@ -54,7 +55,7 @@ function login(e: ChangeEvent<HTMLFormElement>) {
             />
           </div>
           <div className="flex flex-col w-full">
-            <label htmlFor="senha">Senha</label>
+            <label htmlFor="senha" className='text-white'>Senha</label>
             <input
               type="password"
               id="senha"
@@ -78,7 +79,7 @@ function login(e: ChangeEvent<HTMLFormElement>) {
 
           <hr className="border-slate-800 w-full" />
 
-          <p>
+          <p className='text-white'>
             Ainda não tem uma conta?{' '}
             <Link to="/cadastro" className="text-emerald-900 hover:underline">
               Cadastre-se

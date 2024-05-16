@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/exhaustive-deps */
-import carroLogo from '../../assets/logo01.jpg'
 import ModalProduto from '../../components/Produtos/modalProduto/ModalProduto';
 import CardProduto from '../../components/Produtos/cardProduto/CardProduto';
 import { useContext, useEffect, useState } from 'react';
@@ -10,6 +9,7 @@ import { buscar } from '../../services/Service';
 import { AuthContext } from '../../contexts/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 import Carrossel from '../../components/carrossel/Carrossel';
+import backgroundImage from '../../assets/background.jpg'
 
 function Home() {
 
@@ -40,7 +40,8 @@ function Home() {
 
     return (
         <>
-        <div className="bg-emerald-900 flex justify-center">
+        <div className='bg-cover bg-center flex justify-center'
+            style={{ backgroundImage: `url(${backgroundImage})` }}>
           <div className='container grid grid-cols-2 text-white'>
             <div className="flex flex-col gap-4 items-center justify-center py-4">
               <h2 className='text-5xl font-bold'>Seja bem vindo ao futuro!</h2>
@@ -53,13 +54,12 @@ function Home() {
             </div>
   
             <div className="flex justify-center ">
-              {/* <img src={carroLogo} alt="" className='w-2/3' /> */}
               <Carrossel />
       
             </div>
           </div>
         </div>
-        <p className='text-3xl font-semibold text-center '>VEJA NOSSOS PRODUTOS EM DESTAQUE:</p>
+        <p className='text-3xl font-semibold text-center text-white mt-10'>VEJA NOSSOS PRODUTOS EM DESTAQUE</p>
       
         <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
           {produtos.map((produto) => (

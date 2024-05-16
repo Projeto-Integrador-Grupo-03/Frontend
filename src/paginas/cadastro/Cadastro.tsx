@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import { RotatingLines } from 'react-loader-spinner'
 import { useNavigate } from 'react-router-dom'
@@ -88,7 +89,7 @@ function Cadastro() {
                 >
                     <h2 className='text-slate-900 text-5xl'>Cadastrar</h2>
                     <div className="flex flex-col w-full">
-                        <label htmlFor="nome">Nome</label>
+                        <label htmlFor="nome" className='text-white'>Nome</label>
                         <input
                             type="text"
                             id="nome"
@@ -100,7 +101,7 @@ function Cadastro() {
                         />
                     </div>
                     <div className="flex flex-col w-full">
-                        <label htmlFor="login">Usuario</label>
+                        <label htmlFor="login" className='text-white'>Usuario</label>
                         <input
                             type="text"
                             id="login"
@@ -112,7 +113,7 @@ function Cadastro() {
                         />
                     </div>
                     <div className="flex flex-col w-full">
-                        <label htmlFor="foto">Foto</label>
+                        <label htmlFor="foto" className='text-white'>Foto</label>
                         <input
                             type="text"
                             id="foto"
@@ -124,7 +125,7 @@ function Cadastro() {
                         />
                     </div>
                     <div className="flex flex-col w-full">
-                        <label htmlFor="senha">Senha</label>
+                        <label htmlFor="senha" className='text-white'>Senha</label>
                         <input
                             type="password"
                             id="senha"
@@ -136,7 +137,7 @@ function Cadastro() {
                         />
                     </div>
                     <div className="flex flex-col w-full">
-                        <label htmlFor="confirmarSenha">Confirmar Senha</label>
+                        <label htmlFor="confirmarSenha" className='text-white'>Confirmar Senha</label>
                         <input
                             type="password"
                             id="confirmarSenha"

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { ChangeEvent, useContext, useEffect, useState } from "react";
 import Categoria from "../../../models/Categoria";
 import { useNavigate, useParams } from "react-router-dom";
@@ -15,7 +17,6 @@ function FormularioCategoria() {
     const { usuario, handleLogout } = useContext(AuthContext);
     const token = usuario.token;
   
-    // EDIÇÃO EM UM TEMA
     async function buscarPorId(id: string) {
       await buscar(`/categoria/${id}`, setCategoria, {
         headers: {
@@ -24,7 +25,6 @@ function FormularioCategoria() {
       });
     }
   
-    // EDIÇAO
     useEffect(() => {
       if (id !== undefined) {
         buscarPorId(id)
@@ -100,13 +100,13 @@ function FormularioCategoria() {
   
     return (
       <div className="container flex flex-col items-center justify-center mx-auto">
-        <h1 className="text-4xl text-center my-8">
+        <h1 className="text-white text-4xl text-center my-8">
           {id === undefined ? 'Cadastre uma nova Categoria' : 'Editar categoria'}
         </h1>
   
         <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovoCategoria}>
         <div className="flex flex-col gap-2">
-            <label htmlFor="nome">Nome da categoria</label>
+          <label htmlFor="nome" className="text-white">Nome da categoria</label>
             <input
               type="text"
               placeholder="Nome"
@@ -117,7 +117,7 @@ function FormularioCategoria() {
             />
           </div>
           <div className="flex flex-col gap-2">
-            <label htmlFor="descricao">Descricao da categoria</label>
+            <label htmlFor="descricao" className="text-white">Descricao da categoria</label>
             <input
               type="text"
               placeholder="Descricao"

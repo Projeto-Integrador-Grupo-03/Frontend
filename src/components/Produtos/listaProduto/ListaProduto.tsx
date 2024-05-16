@@ -9,6 +9,7 @@ import CardProduto from '../cardProduto/CardProduto';
 import { toastAlerta } from '../../../util/toastAlert';
 
 function ListaProdutos() {
+  
   const [produtos, setProdutos] = useState<Produto[]>([]);
 
   const [loading, setLoading] = useState(true);

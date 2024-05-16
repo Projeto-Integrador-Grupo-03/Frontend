@@ -18,6 +18,7 @@ import ListaProdutos from './components/Produtos/listaProduto/ListaProduto';
 import FormularioProduto from './components/Produtos/formularioProduto/FormularioProduto';
 import DeletarProduto from './components/Produtos/deletarProduto/DeletarProduto';
 import Carrinho from './paginas/Cart/Carinho';
+import backgroundImage from './assets/background.jpg'
 
 function App() {
   return (
@@ -26,7 +27,8 @@ function App() {
     <ToastContainer />
         <BrowserRouter>
           <Navbar />
-          <div className='min-h-[80vh]'>
+          <div className='bg-cover bg-center'
+            style={{ backgroundImage: `url(${backgroundImage})` }}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />

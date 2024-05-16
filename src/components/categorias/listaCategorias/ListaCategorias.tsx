@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useContext, useEffect, useState } from "react";
 import Categoria from "../../../models/Categoria";
 import { useNavigate } from "react-router-dom";
@@ -10,7 +12,7 @@ import { toastAlerta } from "../../../util/toastAlert";
 function ListaCategorias() {
     const [categorias, setCategorias] = useState<Categoria[]>([]);
   
-    let navigate = useNavigate();
+    const navigate = useNavigate();
   
     const { usuario, handleLogout } = useContext(AuthContext);
     const token = usuario.token;

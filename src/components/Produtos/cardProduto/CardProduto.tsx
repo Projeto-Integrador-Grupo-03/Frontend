@@ -45,26 +45,35 @@ function CardProduto({ prod }: CardPostagemProps) {
 
 
   return (
-    <div className='border rounded-lg overflow-hidden shadow-md'>
-      <div className="bg-emerald-600 py-2 px-4">
-        <h3 className='text-lg font-bold text-center text-white'>{prod.nome}</h3>
+    <div className='bg-white border rounded-lg overflow-hidden shadow-md'>
+      <div className="bg-white py-2 px-4">
+        <h3 className='text-lg font-bold text-center text-black'>{prod.nome}</h3>
       </div>
 
       <div>
         <img className="flex justify-center w-full h-96 object-cover" src={prod.foto} alt={prod.nome} />
 
-        <div className='ml-4'>
-          <p><strong>COR:</strong> {prod.cor}</p>
-          <p><strong>MODELO:</strong> {prod.modelo}</p>
-          <p><strong>ANO:</strong> {prod.ano}</p>
-          <p><strong>PREÇO: </strong>R$ {prod.preco}</p>
-          <p><strong>CATEGORIA:</strong> {prod.categoria?.nome}</p>
+        <div className=' text-black grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4'>
+          <div>
+            <p className="font-semibold text-lg mb-2 flex justify-center"><strong>Cor: </strong> {prod.cor}</p>
+          </div>
+          <div>
+            <p className="font-semibold text-lg mb-2 flex justify-center"><strong>Modelo: </strong> {prod.modelo}</p>
+          </div>
+          <div>
+            <p className="font-semibold text-lg mb-2 flex justify-center"><strong>Ano: </strong> {prod.ano}</p>
+          </div>
+          <div>
+            <p className="font-semibold text-lg mb-2 flex justify-center"><strong>Preço: R$</strong>{prod.preco}</p>
+          </div>
+          <div>
+            <p className="font-semibold text-lg mb-2 flex justify-center"><strong>Categoria: </strong> {prod.categoria?.nome}</p>
+          </div>
         </div>
       </div>
 
 
 <div className="p-4">
-        {/* Mostra os botões com base na condição */}
         {isCarrinho && usuario.token !== ""? (
           <div className='flex justify-between'>
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-52"
@@ -76,7 +85,7 @@ function CardProduto({ prod }: CardPostagemProps) {
         ) : (
           
           <div className="flex justify-center">
-            <button className="bg-emerald-900 hover:bg-emerald-700 text-white font-bold py-2 px-4 rounded-full w-80 "
+            <button className="bg-emerald-700 text-black font-bold py-2 px-4 rounded-full w-80 "
             onClick={() => adicionarProduto(prod)}>
               {isLoading ? <RotatingLines
               strokeColor="white"

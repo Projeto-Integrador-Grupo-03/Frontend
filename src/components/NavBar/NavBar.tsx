@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import { toastAlerta } from '../../util/toastAlert';
+import logo from '../../assets/marca01 (4).jpg';
 
 
 function Navbar() {
@@ -22,7 +23,8 @@ if (usuario.token !== "" && usuario.login == "admin@admin.com") {
   navbarComponent = (
      <div className='w-full bg-emerald-800 text-white flex justify-center py-4'>
           <div className="container flex justify-between text-lg">
-            <div className='text-2xl font-bold uppercase'>SUSTENTA DRIVE</div>
+            <div className='text-2xl font-bold uppercase flex justify-between items-center'>
+            <img src={logo} alt="SustentaDrive Logo" className="h-10 mr-10" /><span>SUSTENTA DRIVE</span></div>
             
             <div className='flex gap-4 items-center'>
               <Link to='/home' className='hover:underline'>Home</Link>
@@ -41,7 +43,8 @@ if (usuario.token !== "" && usuario.login == "admin@admin.com") {
   navbarComponent = (
     <div className='w-full bg-emerald-800 text-white flex justify-center py-4'>
          <div className="container flex justify-between text-lg">
-           <div className='text-2xl font-bold uppercase'>SUSTENTA DRIVE</div>
+            <div className='text-2xl font-bold uppercase flex justify-between items-center'>
+            <img src={logo} alt="SustentaDrive Logo" className="h-10 mr-10" /><span>SUSTENTA DRIVE</span></div>
            
            <div className='flex gap-4 items-center'>
              <Link to='/home' className='hover:underline'>Home</Link>
@@ -58,7 +61,8 @@ if (usuario.token !== "" && usuario.login == "admin@admin.com") {
   navbarComponent = (
     <div className='w-full bg-emerald-800 text-white flex justify-center py-4'>
          <div className="container flex justify-between text-lg">
-           <div className='text-2xl font-bold uppercase'>SUSTENTA DRIVE</div>
+            <div className='text-2xl font-bold uppercase flex justify-between items-center'>
+            <img src={logo} alt="SustentaDrive Logo" className="h-10 mr-10" /><span>SUSTENTA DRIVE</span></div>
            
            <div className='flex gap-4 items-center'>
              <Link to='/login' className='hover:underline bg-white text-black py-2 px-4 rounded-full'>Login</Link>
