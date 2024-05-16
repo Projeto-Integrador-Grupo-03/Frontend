@@ -1,6 +1,6 @@
 import React from 'react'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faJava, faReact, faJsSquare, faHtml5 } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faJava, faReact, faJsSquare, faHtml5 } from '@fortawesome/free-brands-svg-icons';
 
 function Card(){
     return (
@@ -8,14 +8,14 @@ function Card(){
             <h3 className="text-primary">Título</h3>
             <p className="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <div className="w-full flex items-center justify-between">
-                {/* <div className="flex gap-8 text-red-500 text-2xl">
+                <div className="flex gap-8 text-red-500 text-2xl">
                 
                     <FontAwesomeIcon icon={faJava} />
                     <FontAwesomeIcon icon={faReact} />
                     <FontAwesomeIcon icon={faJsSquare} />
                     <FontAwesomeIcon icon={faHtml5} />
                  
-                </div> */}
+                </div>
                 
         <button className="w-20 h-20 border border-gray-300 rounded-lg bg-primary text-black text-2xl flex items-center justify-center cursor-pointer shadow-md transition-all duration-300 hover:bg-red-500 hover:text-black hover:shadow-lg px-15 py-3">
                     GitHub
