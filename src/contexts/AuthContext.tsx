@@ -34,7 +34,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     function adicionarProduto(produto: Produto) {
         if(usuario.token !== ""){
             toastAlerta("Produto adicionado com sucesso", 'sucesso')
-            setItems(state => [...state, produto]) 
+            setItems(previtems => [...previtems, produto]); 
         }else{
             toastAlerta("Necessario fazer o login!", 'erro')
         }
@@ -45,15 +45,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
     function removerProduto(produtoId: number) {
         toastAlerta("Produto removido com Sucesso", 'sucesso')
 
-        // O findIndex() verifica se o ID do produto informado consta no Array, e pega a posição/indice desse item no Array
-        const indice = items.findIndex(items => items.id === produtoId) 
-        const novoCart = [...items]   // Faz uma cópia do Carrinho anterior, apenas como variavel auxiliar
-
-        // Se o index é maior que 0, o método splice(), vai encontrar esse item no Array e o remover
-        if(indice >= 0){
-            novoCart.splice(indice, 1)
-            setItems(novoCart)  // Atualiza o Carrinho
-        }
+        setItems(previtems => previtems.filter(item => item.id !== produtoId));
     }
 
     function limparCart() {
