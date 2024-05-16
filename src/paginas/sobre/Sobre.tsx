@@ -1,15 +1,24 @@
 import React from 'react';
+import Card from './CardsSobre';
 
 
 function Sobre() {
     return (
         <>
         <div className=" flex justify-center">
-            <div className="h-96 mb-96">
-
-                <h1 className='text-4xl'>*AQUI FALAREMOS SOBRE A EMPRESA, NOSSA MISSÃO, VISÃO E VALORES!*</h1>
-
-            </div>
+         Nossos Valores
+        </div>
+        <div className=" flex justify-center">
+        Integrantes do Projeto
+        </div>
+        
+        <div className=" flex justify-center">
+            
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            
         </div>
         </>
     );
