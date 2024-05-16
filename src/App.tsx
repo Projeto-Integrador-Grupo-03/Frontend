@@ -27,7 +27,7 @@ function App() {
     <ToastContainer />
         <BrowserRouter>
           <Navbar />
-          <div className='bg-cover bg-center'
+          <div className='min-h-[80vh] bg-cover bg-center'
             style={{ backgroundImage: `url(${backgroundImage})` }}>
             <Routes>
               <Route path="/" element={<Home />} />
