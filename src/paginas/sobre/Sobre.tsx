@@ -12,13 +12,8 @@ function Sobre() {
         Integrantes do Projeto
         </div>
         
-        <div className=" flex justify-center">
-            
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            
+        <div className=" flex justify-center">   
+            <Card />    
         </div>
         </>
     );
