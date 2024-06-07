@@ -18,7 +18,7 @@ import ListaProdutos from './components/Produtos/listaProduto/ListaProduto';
 import FormularioProduto from './components/Produtos/formularioProduto/FormularioProduto';
 import DeletarProduto from './components/Produtos/deletarProduto/DeletarProduto';
 import Carrinho from './paginas/Cart/Carinho';
-import backgroundImage from './assets/background.jpg'
+import  './assets/font.css';
 
 function App() {
   return (
@@ -27,8 +27,7 @@ function App() {
     <ToastContainer />
         <BrowserRouter>
           <Navbar />
-          <div className='min-h-[80vh] bg-cover bg-center'
-            style={{ backgroundImage: `url(${backgroundImage})` }}>
+          <div className='font-sf-pro bg-slate-100 min-h-[80vh] bg-cover bg-center'>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />

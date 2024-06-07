@@ -4,7 +4,6 @@ import UsuarioLogin from "../models/UsuarioLogin"
 import { login } from "../services/Service"
 import { toastAlerta } from "../util/toastAlert"
 import Produto from "../models/Produto"
-import { useNavigate } from "react-router-dom"
 
 
 interface AuthContextProps {

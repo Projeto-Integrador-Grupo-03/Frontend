@@ -12,9 +12,9 @@ import "./Carrossel.css";
 // Importando Modulos do Carrossel
 import {Autoplay, Navigation, Pagination } from 'swiper/modules';
 
-import logo01 from "../../assets/logo01.jpg"
-import logo02 from "../../assets/logo02.jpg"
-import logo04 from "../../assets/logo04.jpg"
+import logo01 from "../../assets/principal.jpg"
+import logo02 from "../../assets/02.jpg"
+import logo04 from "../../assets/03.jpg"
 
 function Carrossel() {
 

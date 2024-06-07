@@ -45,29 +45,26 @@ function CardProduto({ prod }: CardPostagemProps) {
 
 
   return (
-    <div className='bg-white border rounded-lg overflow-hidden shadow-md'>
-      <div className="bg-white py-2 px-4">
-        <h3 className='text-lg font-bold text-center text-black'>{prod.nome}</h3>
-      </div>
+    <div className='font-sf-pro bg-white border rounded-lg overflow-hidden shadow-md'>
+      <img className="flex justify-center w-full h-96 object-cover" src={prod.foto} alt={prod.nome} />
 
       <div>
-        <img className="flex justify-center w-full h-96 object-cover" src={prod.foto} alt={prod.nome} />
+        <div className="py-2 px-4">
+            <h3 className=' text-3xl text-black mb-2'>{prod.nome}</h3>
+        </div>
 
-        <div className=' text-black grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4'>
+        <div className=' text-black'>
           <div>
-            <p className="font-semibold text-lg mb-2 flex justify-center"><strong>Cor: </strong> {prod.cor}</p>
+            <p className="ml-4 text-lg mb-2">{prod.modelo}</p>
           </div>
           <div>
-            <p className="font-semibold text-lg mb-2 flex justify-center"><strong>Modelo: </strong> {prod.modelo}</p>
+            <p className="ml-4 text-lg mb-2"> {prod.ano}</p>
           </div>
           <div>
-            <p className="font-semibold text-lg mb-2 flex justify-center"><strong>Ano: </strong> {prod.ano}</p>
+            <p className="ml-4 text-lg mb-2">R$ {prod.preco}</p>
           </div>
           <div>
-            <p className="font-semibold text-lg mb-2 flex justify-center"><strong>Preço: R$</strong>{prod.preco}</p>
-          </div>
-          <div>
-            <p className="font-semibold text-lg mb-2 flex justify-center"><strong>Categoria: </strong> {prod.categoria?.nome}</p>
+            <p className="ml-4 text-lg mb-2">{prod.categoria?.nome}</p>
           </div>
         </div>
       </div>
@@ -76,7 +73,7 @@ function CardProduto({ prod }: CardPostagemProps) {
 <div className="p-4">
         {isCarrinho && usuario.token !== ""? (
           <div className='flex justify-between'>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-52"
+            <button className="bg-slate-700 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-52"
               onClick={() => adicionarProduto(prod)}>Adicionar</button>
 
             <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full w-52"
@@ -85,7 +82,7 @@ function CardProduto({ prod }: CardPostagemProps) {
         ) : (
           
           <div className="flex justify-center">
-            <button className="bg-emerald-700 text-black font-bold py-2 px-4 rounded-full w-80 "
+            <button className="bg-slate-700 text-white font-bold py-2 px-4 rounded-lg w-80 "
             onClick={() => adicionarProduto(prod)}>
               {isLoading ? <RotatingLines
               strokeColor="white"

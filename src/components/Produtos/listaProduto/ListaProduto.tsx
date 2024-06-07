@@ -45,6 +45,9 @@ function ListaProdutos() {
           wrapperClass="dna-wrapper mx-auto"
         />
       )}
+      <div className='flex justify-center py-10 font-bold text-3xl text-black mb-2'>
+        <h1>Confira nossas ofertas</h1>
+      </div>
       <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
         {produtos.map((produto) => (
           <CardProduto key={produto.id} prod={produto} />

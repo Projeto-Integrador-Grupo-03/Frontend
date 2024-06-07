@@ -100,13 +100,13 @@ function FormularioCategoria() {
   
     return (
       <div className="container flex flex-col items-center justify-center mx-auto">
-        <h1 className="text-white text-4xl text-center my-8">
+        <h1 className="font-bold text-black text-4xl text-center my-8">
           {id === undefined ? 'Cadastre uma nova Categoria' : 'Editar categoria'}
         </h1>
   
-        <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovoCategoria}>
+        <form className="w-1/2 flex flex-col gap-4 font-bold" onSubmit={gerarNovoCategoria}>
         <div className="flex flex-col gap-2">
-          <label htmlFor="nome" className="text-white">Nome da categoria</label>
+          <label htmlFor="nome" className="text-black">Nome da categoria</label>
             <input
               type="text"
               placeholder="Nome"
@@ -117,7 +117,7 @@ function FormularioCategoria() {
             />
           </div>
           <div className="flex flex-col gap-2">
-            <label htmlFor="descricao" className="text-white">Descricao da categoria</label>
+            <label htmlFor="descricao" className="text-black">Descricao da categoria</label>
             <input
               type="text"
               placeholder="Descricao"
@@ -128,7 +128,7 @@ function FormularioCategoria() {
             />
           </div>
           <button
-            className="rounded text-slate-100 bg-emerald-900 hover:bg-emerald-700 w-1/2 py-2 mx-auto block"
+            className="rounded text-slate-100 bg-slate-700 hover:bg-slate-900 w-1/2 py-2 mx-auto block"
             type="submit"
           >
             {id === undefined ? 'Cadastrar' : 'Editar'}

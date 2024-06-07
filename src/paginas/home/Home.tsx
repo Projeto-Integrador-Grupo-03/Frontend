@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/exhaustive-deps */
 import ModalProduto from '../../components/Produtos/modalProduto/ModalProduto';
@@ -7,13 +8,11 @@ import Produto from '../../models/Produto';
 import { toastAlerta } from '../../util/toastAlert';
 import { buscar } from '../../services/Service';
 import { AuthContext } from '../../contexts/AuthContext';
-import { Link, useNavigate } from 'react-router-dom';
 import Carrossel from '../../components/carrossel/Carrossel';
-import backgroundImage from '../../assets/background.jpg'
+import { Link } from 'react-router-dom';
 
 function Home() {
 
-  const navigate = useNavigate()
 
   const [produtos, setProdutos] = useState<Produto[]>([]);
 
@@ -40,33 +39,27 @@ function Home() {
 
     return (
         <>
-        <div className='bg-cover bg-center flex justify-center'
-            style={{ backgroundImage: `url(${backgroundImage})` }}>
-          <div className='container grid grid-cols-2 text-white'>
+         <div className='carrossel flex justify-center'>
+              <Carrossel />
+        </div>
+        <div className='bg-cover bg-center flex justify-center'>
+          <div className='container text-black'>
             <div className="flex flex-col gap-4 items-center justify-center py-4">
               <h2 className='text-5xl font-bold'>Seja bem vindo ao futuro!</h2>
-              <p className='text-xl'>Onde você vai andar com responsabilidade</p>
+              <p className='text-xl'>Movendo-se para um futuro mais verde</p>
   
               <div className="flex justify-around gap-4">
                 <ModalProduto />
-              <Link to='/produtos' className='hover:underline'><button className='border rounded py-2 px-4 hover:bg-white hover:text-black'>Veja nossos catálogos</button></Link>
+              <Link to='/produtos' className='hover:underline'><button className='border rounded py-2 px-4 hover:bg-slate-200 hover:text-black'>Veja nossos catálogos</button></Link>
               </div>
-            </div>
-  
-            <div className="flex justify-center ">
-              <Carrossel />
-      
             </div>
           </div>
         </div>
-        <p className='text-3xl font-semibold text-center text-white mt-10'>VEJA NOSSOS PRODUTOS EM DESTAQUE</p>
-      
-        <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+        <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7'>
           {produtos.map((produto) => (
           <CardProduto key={produto.id} prod={produto} />
         ))}
       </div>
-      
       </>
     );
 }
