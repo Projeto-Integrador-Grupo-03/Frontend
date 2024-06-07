@@ -43,7 +43,7 @@ function login(e: ChangeEvent<HTMLFormElement>) {
         <form className="flex justify-center items-center flex-col w-1/2 gap-4" onSubmit={login}>
           <h2 className="text-black text-5xl ">Entrar</h2>
           <div className="flex flex-col w-full">
-            <label htmlFor="login" className='text-white'>Login</label>
+            <label htmlFor="login" className='text-black'>Login</label>
             <input
               type="text"
               id="login"
@@ -55,7 +55,7 @@ function login(e: ChangeEvent<HTMLFormElement>) {
             />
           </div>
           <div className="flex flex-col w-full">
-            <label htmlFor="senha" className='text-white'>Senha</label>
+            <label htmlFor="senha" className='text-black'>Senha</label>
             <input
               type="password"
               id="senha"

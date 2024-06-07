@@ -22,7 +22,7 @@ let navbarComponent
 
 if (usuario.token !== "" && usuario.login == "admin@admin.com") {
   navbarComponent = (
-     <div className='w-full bg-white text-black flex justify-center py-4'>
+     <div className='w-full bg-slate-100 text-black flex justify-center py-4'>
           <div className="container flex justify-between text-lg">
             <div className='text-2xl font-bold uppercase flex justify-between items-center'>
             <Link to='/home'><img src={logo} alt="SustentaDrive Logo" className="h-16 mr-10" /></Link><Link to='/home'>SUSTENTA DRIVE</Link></div>
@@ -42,7 +42,7 @@ if (usuario.token !== "" && usuario.login == "admin@admin.com") {
   )
 } else if(usuario.token !== ""){
   navbarComponent = (
-    <div className='w-full bg-white text-black flex justify-center py-4'>
+    <div className='w-full bg-slate-100 text-black flex justify-center py-4'>
          <div className="container flex justify-between text-lg">
             <div className='text-2xl font-bold uppercase flex justify-between items-center'>
             <Link to='/home'><img src={logo} alt="SustentaDrive Logo" className="h-16 mr-10" /></Link><Link to='/home'>SUSTENTA DRIVE</Link></div>
@@ -60,7 +60,7 @@ if (usuario.token !== "" && usuario.login == "admin@admin.com") {
   )
 }else{
   navbarComponent = (
-    <div className='w-full bg-white text-black flex justify-center py-4'>
+    <div className='w-full bg-slate-100 text-black flex justify-center py-4'>
          <div className="container flex justify-between text-lg">
             <div className='text-2xl font-bold uppercase flex justify-between items-center'>
             <Link to='/home'><img src={logo} alt="SustentaDrive Logo" className="h-16 mr-10" /></Link><Link to='/home'>SUSTENTA DRIVE</Link></div>

@@ -49,22 +49,20 @@ function CardProduto({ prod }: CardPostagemProps) {
       <img className="flex justify-center w-full h-96 object-cover" src={prod.foto} alt={prod.nome} />
 
       <div>
-        <div className="py-2 px-4">
+        <div className="py-2 px-4 text-center">
             <h3 className=' text-3xl text-black mb-2'>{prod.nome}</h3>
         </div>
+        
 
         <div className=' text-black'>
           <div>
-            <p className="ml-4 text-lg mb-2">{prod.modelo}</p>
+            <p className="uppercase ml-4 text-lg mb-2">{prod.modelo}</p>
           </div>
           <div>
-            <p className="ml-4 text-lg mb-2"> {prod.ano}</p>
+            <p className="ml-4 text-lg mb-2">Ano  {prod.ano}</p>
           </div>
           <div>
-            <p className="ml-4 text-lg mb-2">R$ {prod.preco}</p>
-          </div>
-          <div>
-            <p className="ml-4 text-lg mb-2">{prod.categoria?.nome}</p>
+            <p className=" font-bold ml-4 text-2xl mb-2">R$ {prod.preco}</p>
           </div>
         </div>
       </div>
@@ -82,7 +80,7 @@ function CardProduto({ prod }: CardPostagemProps) {
         ) : (
           
           <div className="flex justify-center">
-            <button className="bg-slate-700 text-white font-bold py-2 px-4 rounded-lg w-80 "
+            <button className="bg-slate-700 hover:bg-slate-950 text-white font-bold py-2 px-4 rounded-lg w-80 "
             onClick={() => adicionarProduto(prod)}>
               {isLoading ? <RotatingLines
               strokeColor="white"

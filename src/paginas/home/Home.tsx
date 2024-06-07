@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/exhaustive-deps */
 import ModalProduto from '../../components/Produtos/modalProduto/ModalProduto';
@@ -42,8 +41,8 @@ function Home() {
          <div className='carrossel flex justify-center'>
               <Carrossel />
         </div>
-        <div className='bg-cover bg-center flex justify-center'>
-          <div className='container text-black'>
+        <div className='bg-slate-700 bg-cover bg-center flex justify-center'>
+          <div className='container text-white'>
             <div className="flex flex-col gap-4 items-center justify-center py-4">
               <h2 className='text-5xl font-bold'>Seja bem vindo ao futuro!</h2>
               <p className='text-xl'>Movendo-se para um futuro mais verde</p>

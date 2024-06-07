@@ -13,7 +13,7 @@ import "./Carrossel.css";
 import {Autoplay, Navigation, Pagination } from 'swiper/modules';
 
 import logo01 from "../../assets/principal.jpg"
-import logo02 from "../../assets/02.jpg"
+import logo02 from "../../assets/02.jpeg"
 import logo04 from "../../assets/03.jpg"
 
 function Carrossel() {
