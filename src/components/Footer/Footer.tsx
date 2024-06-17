@@ -5,7 +5,7 @@ function Footer() {
 
   return (
     <>
-    <div className='bg-gray-200'>
+    <div className='bg-white border'>
       <div className="pb-0 p-10 bg-dark-blue-footer text-light-gray-footer">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
@@ -82,23 +82,27 @@ function Footer() {
                 <li className="pb-3">
                   {" "}
                   <i className="fa fa-chevron-right text-meddium-orange"></i>
-                  <Link to="/home" className="hover:text-meddium-orange">
+                  <Link to="/produtos" className="hover:text-meddium-orange">
                     {" "}
                     Marketplace
                   </Link>
                 </li>
               </ul>
             </div>
+
+
             <div className="mb-5">
+              <h4 className="pb-1 font-semibold">Nossa newsletter</h4>
+              <Link to="/login">
               <h4 className="py-4">Se inscreva para receber novidades!</h4>
+              
+              
               <p className="text-meddium-gray-footer pb-3">
                 Receba atualizações da plataforma
                 <br />
               </p>
-              <form className="flex flex-row flex-wrap">
-                <button className="p-2 w-1/3 bg-meddium-orange text-white-new hover:bg-dark-orange">Se inscrever
-                </button>
-              </form>
+                <p className="text-meddium-gray-footer pb-3">Inscreva-se</p>
+              </Link>
             </div>
           </div>
         </div>
