@@ -57,7 +57,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="container mx-auto my-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-x-0 gap-y-4">
+      <div className="container mx-auto my-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-x-0 gap-y-4 justify-items-center">
         {produtos.map((produto) => (
           <CardProduto key={produto.id} prod={produto} />
         ))}
