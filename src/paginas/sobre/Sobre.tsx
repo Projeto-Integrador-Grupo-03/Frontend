@@ -1,32 +1,67 @@
-import React from 'react';
-import Card from './CardSobre';
-
+import React from "react";
+import Card from "./CardSobre";
+import back from "../../assets/backSobrenos.jpg";
 
 function Sobre() {
-    return (
-        <>
-        {/* <div className=" bg-slate-800 text-white font-bold pt-10 w-auto h-80">
-            <div className="mb-4 text-center text-3xl">Nossos Valores</div>
-                <div className="text-center">
-                    <h3 className="text-center">
-                        Na SustentaDrive, estamos comprometidos com um futuro mais limpo e sustentável para todos. Desde o nosso início, nos dedicamos a oferecer uma alternativa revolucionária na indústria automobilística: veículos que não apenas entregam desempenho excepcional, mas também protegem o planeta que todos chamamos de lar.
-                        Na SustentaDrive, acreditamos que o progresso não precisa vir às custas do meio ambiente. É por isso que nos especializamos em veículos elétricos e outras tecnologias de mobilidade sustentável. Nossos carros são alimentados por energia limpa e renovável, reduzindo drasticamente as emissões de carbono e promovendo a saúde do nosso ecossistema.
-                        Além disso, estamos comprometidos em fornecer uma experiência excepcional aos nossos clientes. Nossa equipe dedicada está aqui para ajudá-lo a encontrar o veículo perfeito para atender às suas necessidades, ao mesmo tempo em que orienta você através das opções de financiamento e assistência técnica.
-                        Na SustentaDrive, acreditamos que cada escolha conta. Ao escolher um de nossos veículos, você não apenas desfruta de uma condução suave e eficiente, mas também contribui para um futuro mais limpo e saudável para as gerações futuras. Junte-se a nós enquanto avançamos em direção a um mundo onde a mobilidade ecológica é a norma.
-                        Obrigado por escolher SustentaDrive. Juntos, estamos dirigindo para um amanhã melhor.
-                    </h3>
-            </div>
-        </div> */}
+  return (
+    <div className="relative">
+      <img
+        src={back}
+        alt="background"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="relative z-10 container mx-auto py-10 px-4 bg-green-900 bg-opacity-30 text-white rounded-lg shadow-md">
+        <div className="content text-center mb-10">
+          <h1 className="text-4xl font-bold">Sustenta Drive</h1>
+          <p className="text-xl">Construindo um futuro mais verde.</p>
+        </div>
 
-        <div className="bg-slate-800 text-white  flex justify-center font-bold py-10 text-3xl">
-            <h1>Integrantes do Projeto  </h1>
+        <div className="p-6">
+          <h2 className="text-2xl font-bold mb-4">Nossa Missão</h2>
+          <p className="text-justify">
+            Nossa missão é transformar a mobilidade urbana através da venda de produtos elétricos e sustentáveis, contribuindo para a mitigação das mudanças climáticas e promovendo um futuro mais verde. Estamos comprometidos em oferecer veículos 100% elétricos que não apenas reduzem a dependência de combustíveis fósseis, mas também proporcionam uma experiência de transporte mais eficiente e ecológica.
+          </p>
         </div>
-        
-        <div className=" flex justify-center">   
-            <Card />    
+
+        <div className="p-6">
+          <h2 className="text-2xl font-bold mb-4">Nossa Visão</h2>
+          <p className="text-justify">
+            Nossa visão é ser referência global em mobilidade sustentável, liderando a transição para um futuro onde o transporte seja inteiramente movido por energias renováveis. Queremos criar um impacto positivo duradouro no meio ambiente, inspirando indivíduos e empresas a adotarem soluções de mobilidade que preservem o planeta para as futuras gerações.
+          </p>
         </div>
-        </>
-    );
+
+        <div className="p-6">
+          <h2 className="text-2xl font-bold mb-4">Nossos Valores</h2>
+          <ul className="list-disc list-inside text-justify">
+            <li>
+              <strong>Sustentabilidade:</strong> Acreditamos que a mobilidade deve ser aliada ao respeito ao meio ambiente. Por isso, oferecemos produtos que minimizam o impacto ambiental e promovem o uso de energia limpa.
+            </li>
+            <li>
+              <strong>Inovação:</strong> Estamos na vanguarda das tecnologias sustentáveis, buscando constantemente soluções inovadoras que melhorem a eficiência e o desempenho de nossos produtos.
+            </li>
+            <li>
+              <strong>Responsabilidade Social:</strong> Destinamos 10% da venda de cada veículo para investimentos em iniciativas de plantio de árvores e agricultura sustentável, reafirmando nosso compromisso com a preservação do planeta.
+            </li>
+            <li>
+              <strong>Transparência:</strong> Valorizamos a honestidade e a clareza em todas as nossas interações, garantindo que nossos clientes tenham todas as informações necessárias para fazer escolhas conscientes.
+            </li>
+            <li>
+              <strong>Comprometimento:</strong> Estamos dedicados a fornecer produtos de alta qualidade e serviços excepcionais, sempre com o objetivo de superar as expectativas dos nossos clientes.
+            </li>
+          </ul>
+        </div>
+
+        <div className="p-6">
+          <div className="text-center font-bold py-10 text-3xl">
+            <h1>Integrantes do Projeto</h1>
+          </div>
+          <div className="flex justify-center">
+            <Card />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Sobre;

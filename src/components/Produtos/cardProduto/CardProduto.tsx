@@ -59,7 +59,7 @@ function CardProduto({ prod }: CardPostagemProps) {
   }
 
   return (
-    <div className="bg-white border shadow-slate-950 rounded-lg overflow-hidden shadow-md w-96 h-auto">
+    <div className="bg-white border rounded-lg w-96 h-auto">
       <img className="w-full h-52" src={prod.foto} alt={prod.nome} />
 
       <div>
